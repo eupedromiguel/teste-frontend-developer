@@ -1,0 +1,76 @@
+# =============================================
+# TechFlow Solutions - Landing Page
+# Git Ignore File
+# =============================================
+
+# Dependencies
+node_modules/
+vendor/
+
+# Environment Variables
+.env
+.env.local
+.env.production
+
+# Database Configuration (if sensitive)
+# Uncomment if you want to ignore database config
+# config/database.php
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+error_log
+debug.log
+
+# Compiled CSS (if using Sass CLI or build tools)
+# Uncomment if you compile Sass automatically
+# assets/css/style.css
+# assets/css/style.min.css
+
+# Temporary Files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Build Files
+dist/
+build/
+
+# Cache
+.cache/
+*.cache
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# PHP
+.phpunit.result.cache
+composer.phar
+
+# Backup Files
+*.bak
+*.backup
+*.old
+
+# User Uploads (if applicable)
+uploads/*
+!uploads/.gitkeep
+
+# Documentation Build Files
+docs/_build/
