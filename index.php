@@ -9,26 +9,29 @@
 
     <title>TechFlow Solutions - Transformação Digital para o seu Negócio</title>
 
-    <!-- Preload Critical Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="container">
-            <a href="#" class="logo">TechFlow</a>
-            <a href="tel:4899999999" class="contact-phone">(48) 9 9999-9999</a>
+            <a href="#" class="logo">
+                <i data-lucide="zap"></i>
+                <span>TechFlow</span>
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=5511912345678&text&type=phone_number&app_absent=0" class="contact-phone">
+                <i data-lucide="phone"></i>
+                <span>(11) 91234-5789</span>
+            </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
@@ -49,7 +52,7 @@
 
                 <form id="contactForm" method="POST" action="api/submit-form.php">
                     <div class="form-group">
-                        <label for="name">Nome:</label>
+                        <label for="name">Nome</label>
                         <input
                             type="text"
                             id="name"
@@ -62,7 +65,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="email">E-mail:</label>
+                        <label for="email">E-mail</label>
                         <input
                             type="email"
                             id="email"
@@ -75,12 +78,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">DDD + Telefone:</label>
+                        <label for="phone">Telefone</label>
                         <input
                             type="tel"
                             id="phone"
                             name="phone"
-                            placeholder="(48) 99999-9999"
+                            placeholder="(11) 91234-5789"
                             required
                             autocomplete="tel"
                         >
@@ -106,11 +109,10 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about section" id="about">
         <div class="container">
             <div class="about-image fade-in-up">
-                <!-- Placeholder for image/icon -->
+                <img src="assets/images/image1.png" alt="TechFlow Solutions - Transformação Digital">
             </div>
             <div class="about-content fade-in-up">
                 <h2>Quem Somos</h2>
@@ -128,47 +130,46 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services section" id="services">
         <div class="container">
             <div class="section-header">
-                <h2>Com nossos serviços você:</h2>
-                <p>Soluções completas para transformar seu negócio</p>
+                <h2>Soluções completas para transformar seu negócio</h2>
+                <p>Com nossos serviços você</p>
             </div>
 
             <div class="services-grid">
                 <div class="service-card fade-in-up">
-                    <div class="service-icon">🚀</div>
+                    <div class="service-icon"><i data-lucide="rocket"></i></div>
                     <h4>Acelera o Crescimento</h4>
                     <p>Implementamos estratégias digitais que impulsionam suas vendas e expandem sua presença no mercado de forma escalável.</p>
                 </div>
 
                 <div class="service-card fade-in-up">
-                    <div class="service-icon">💡</div>
+                    <div class="service-icon"><i data-lucide="lightbulb"></i></div>
                     <h4>Inova Processos</h4>
                     <p>Modernizamos sua operação com tecnologias de ponta, aumentando eficiência e reduzindo custos operacionais.</p>
                 </div>
 
                 <div class="service-card fade-in-up">
-                    <div class="service-icon">📊</div>
+                    <div class="service-icon"><i data-lucide="bar-chart-3"></i></div>
                     <h4>Toma Decisões Baseadas em Dados</h4>
                     <p>Fornecemos análises detalhadas e dashboards intuitivos para decisões estratégicas mais assertivas.</p>
                 </div>
 
                 <div class="service-card fade-in-up">
-                    <div class="service-icon">🔒</div>
+                    <div class="service-icon"><i data-lucide="shield-check"></i></div>
                     <h4>Garante Segurança</h4>
                     <p>Protegemos seus dados e sistemas com as melhores práticas de segurança da informação do mercado.</p>
                 </div>
 
                 <div class="service-card fade-in-up">
-                    <div class="service-icon">⚡</div>
+                    <div class="service-icon"><i data-lucide="zap"></i></div>
                     <h4>Otimiza Performance</h4>
                     <p>Aumentamos a velocidade e confiabilidade de suas aplicações para uma experiência superior do usuário.</p>
                 </div>
 
                 <div class="service-card fade-in-up">
-                    <div class="service-icon">🎯</div>
+                    <div class="service-icon"><i data-lucide="target"></i></div>
                     <h4>Alcança Resultados</h4>
                     <p>Focamos em entregas com impacto real no seu negócio, com métricas claras de sucesso e ROI positivo.</p>
                 </div>
@@ -176,7 +177,6 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq section" id="faq">
         <div class="container">
             <div class="section-header">
@@ -225,14 +225,22 @@
                         Como funciona o processo de consultoria?
                     </button>
                     <div class="faq-answer">
-                        <p>Nosso processo tem 4 etapas: (1) Diagnóstico - entendemos seu negócio e desafios; (2) Planejamento - criamos uma estratégia personalizada; (3) Implementação - executamos as soluções; (4) Acompanhamento - monitoramos resultados e fazemos ajustes contínuos.</p>
+                        <p>Nosso processo tem 4 etapas
+                            <br> 
+                            <br>
+                            1. Diagnóstico : entendemos seu negócio e desafios
+                            <br> 
+                            2. Planejamento : criamos uma estratégia personalizada 
+                            <br>
+                            3. Implementação : executamos as soluções
+                            <br> 
+                            4. Acompanhamento : monitoramos resultados e fazemos ajustes contínuos</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta section">
         <div class="container">
             <h2>Pronto para transformar seu negócio?</h2>
@@ -244,15 +252,18 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 TechFlow Solutions. Todos os direitos reservados.</p>
-            <p>CNPJ: 00.000.000/0001-00 | Fone: (48) 9 9999-9999</p>
+            <p>CNPJ: 00.000.000/0001-00 | Fone: (11) 91234-5789</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
