@@ -491,7 +491,32 @@ img {
 }
 
 .services {
-  background: #f8fafc;
+  background-image:
+    linear-gradient(135deg, rgba(37, 99, 235, 0.90) 0%, rgba(14, 165, 233, 0.85) 100%),
+    url('../images/image4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.1;
+  animation: patternMove 20s linear infinite;
+  pointer-events: none;
+}
+
+.services .container {
+  position: relative;
+  z-index: 1;
 }
 
 .services .section-header {
@@ -501,13 +526,15 @@ img {
 
 .services .section-header h2 {
   margin-bottom: 1.5rem;
+  color: #ffffff;
 }
 
 .services .section-header p {
   font-size: 18px;
-  color: #475569;
+  color: rgba(255, 255, 255, 0.95);
   max-width: 600px;
   margin: 0 auto;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .services-grid {
@@ -517,17 +544,26 @@ img {
 }
 
 .service-card {
-  background: #ffffff;
-  border-radius: 0.75rem;
-  padding: 2rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  box-shadow:
+    0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
   text-align: center;
-  transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 20px 40px 0 rgba(31, 38, 135, 0.5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .service-card .service-icon {
@@ -541,18 +577,21 @@ img {
 .service-card .service-icon svg {
   width: 3rem;
   height: 3rem;
-  stroke: #2563eb;
+  stroke: #ffffff;
   stroke-width: 2;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .service-card h4 {
-  color: #0f172a;
+  color: #ffffff;
   margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .service-card p {
-  color: #475569;
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .service-card:nth-child(1) .service-icon {
@@ -652,6 +691,20 @@ img {
 .faq-answer p {
   padding: 0 2rem 1.5rem;
   margin: 0;
+}
+
+.faq-answer section {
+  padding: 0 2rem 1.5rem;
+}
+
+.faq-answer ol {
+  padding-left: 4rem;
+  margin-top: 1rem;
+}
+
+.faq-answer li {
+  margin-bottom: 1rem;
+  line-height: 1.8;
 }
 
 .faq-answer.active {

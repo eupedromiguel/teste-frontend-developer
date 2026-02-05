@@ -189,6 +189,7 @@
                         Quanto tempo leva para ver resultados da transformação digital?
                     </button>
                     <div class="faq-answer">
+                        <br>
                         <p>Os primeiros resultados podem ser observados já nas primeiras semanas, com ganhos de eficiência operacional. Resultados estratégicos mais profundos geralmente aparecem entre 3 e 6 meses, dependendo do escopo do projeto e da maturidade digital da empresa.</p>
                     </div>
                 </div>
@@ -198,6 +199,7 @@
                         Quais são os custos envolvidos na consultoria?
                     </button>
                     <div class="faq-answer">
+                        <br>
                         <p>Os custos variam conforme o tamanho da empresa e complexidade do projeto. Oferecemos uma consultoria inicial gratuita para entender suas necessidades e apresentar um orçamento personalizado. Nossos planos são flexíveis e adaptados ao seu orçamento.</p>
                     </div>
                 </div>
@@ -207,6 +209,7 @@
                         Vocês oferecem suporte após a implementação?
                     </button>
                     <div class="faq-answer">
+                        <br>
                         <p>Sim! Oferecemos diferentes planos de suporte contínuo, incluindo monitoramento, manutenção, atualizações e treinamento da equipe. Nossa parceria não termina na implementação, estamos ao seu lado durante toda a jornada.</p>
                     </div>
                 </div>
@@ -216,6 +219,7 @@
                         É possível começar com um projeto piloto?
                     </button>
                     <div class="faq-answer">
+                        <br>
                         <p>Absolutamente! Recomendamos começar com um projeto piloto para validar a abordagem e demonstrar valor antes de uma transformação completa. Isso reduz riscos e permite ajustes conforme necessário.</p>
                     </div>
                 </div>
@@ -225,16 +229,26 @@
                         Como funciona o processo de consultoria?
                     </button>
                     <div class="faq-answer">
-                        <p>Nosso processo tem 4 etapas
-                            <br> 
-                            <br>
-                            1. Diagnóstico : entendemos seu negócio e desafios
-                            <br> 
-                            2. Planejamento : criamos uma estratégia personalizada 
-                            <br>
-                            3. Implementação : executamos as soluções
-                            <br> 
-                            4. Acompanhamento : monitoramos resultados e fazemos ajustes contínuos</p>
+                        <section>
+                            <ol>
+                                <li>
+                                    <strong>Diagnóstico</strong><br>
+                                    Analisamos seu negócio a fundo para compreender objetivos, desafios e oportunidades.
+                                </li>
+                                <li>
+                                    <strong>Planejamento</strong><br>
+                                    Desenvolvemos uma estratégia personalizada, alinhada às suas necessidades e metas.
+                                </li>
+                                <li>
+                                    <strong>Implementação</strong><br>
+                                    Colocamos as soluções em prática com foco em eficiência e qualidade.
+                                </li>
+                                <li>
+                                    <strong>Acompanhamento</strong><br>
+                                    Monitoramos os resultados continuamente e realizamos ajustes para garantir a evolução constante.
+                                </li>
+                            </ol>
+                        </section>
                     </div>
                 </div>
             </div>
