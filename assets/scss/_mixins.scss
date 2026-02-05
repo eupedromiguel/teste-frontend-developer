@@ -1,8 +1,3 @@
-// =============================================
-// Mixins - TechFlow Solutions
-// =============================================
-
-// Media Queries
 @mixin respond-to($breakpoint) {
   @if $breakpoint == 'sm' {
     @media (min-width: $breakpoint-sm) { @content; }
@@ -18,14 +13,12 @@
   }
 }
 
-// Flexbox Center
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-// Absolute Center
 @mixin absolute-center {
   position: absolute;
   top: 50%;
@@ -33,7 +26,6 @@
   transform: translate(-50%, -50%);
 }
 
-// Button Reset
 @mixin button-reset {
   background: none;
   border: none;
@@ -44,14 +36,12 @@
   outline: inherit;
 }
 
-// Transition
 @mixin transition($properties...) {
   transition-property: $properties;
   transition-duration: $transition-base;
   transition-timing-function: ease-in-out;
 }
 
-// Hover Effect
 @mixin hover-lift {
   transition: transform $transition-base, box-shadow $transition-base;
 
@@ -61,7 +51,6 @@
   }
 }
 
-// Card Style
 @mixin card {
   background: $white;
   border-radius: $radius-lg;
@@ -69,7 +58,6 @@
   box-shadow: $shadow-md;
 }
 
-// Container
 @mixin container {
   max-width: $container-max-width;
   margin: 0 auto;
@@ -80,12 +68,10 @@
   }
 }
 
-// Gradient Background
 @mixin gradient-bg {
   background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
 }
 
-// Text Gradient
 @mixin text-gradient {
   background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
   -webkit-background-clip: text;
@@ -93,7 +79,6 @@
   background-clip: text;
 }
 
-// Animation Fade In Up
 @mixin fade-in-up {
   opacity: 0;
   transform: translateY(30px);
@@ -105,14 +90,12 @@
   }
 }
 
-// Truncate Text
 @mixin truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-// Line Clamp
 @mixin line-clamp($lines) {
   display: -webkit-box;
   -webkit-line-clamp: $lines;

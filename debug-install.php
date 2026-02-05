@@ -32,16 +32,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $debug[] = "Tentando conectar ao MySQL...";
             $conn = new PDO("mysql:host=" . DB_HOST, DB_USER, DB_PASS);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $debug[] = "✅ Conectado ao MySQL!";
+            $debug[] = "Conectado ao MySQL!";
 
             // Criar banco
             $debug[] = "Criando banco de dados...";
             $conn->exec("CREATE DATABASE IF NOT EXISTS " . DB_NAME . " CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
-            $debug[] = "✅ Banco criado!";
+            $debug[] = "Banco criado!";
 
             // Usar banco
             $conn->exec("USE " . DB_NAME);
-            $debug[] = "✅ Usando banco " . DB_NAME;
+            $debug[] = "Usando banco " . DB_NAME;
 
             // Criar tabela
             $debug[] = "Criando tabela contacts...";
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
 
             $conn->exec($sql);
-            $debug[] = "✅ Tabela criada!";
+            $debug[] = "Tabela criada!";
 
             // Inserir dados de exemplo
             $debug[] = "Inserindo dados de exemplo...";
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             foreach ($samples as $data) {
                 $stmt->execute($data);
             }
-            $debug[] = "✅ Dados inseridos!";
+            $debug[] = "Dados inseridos!";
 
             $installed = true;
 
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $debug[] = "❌ ERRO: " . $error;
         }
     } else {
-        $debug[] = "⚠️ Botão 'install' NÃO foi encontrado no POST";
+        $debug[] = "Botão 'install' NÃO foi encontrado no POST";
     }
 } else {
     $debug[] = "Aguardando submissão do formulário...";
@@ -171,14 +171,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <?php if ($installed): ?>
         <div class="success">
-            <h2>✅ SUCESSO!</h2>
+            <h2>SUCESSO!</h2>
             <p>Banco de dados instalado com sucesso!</p>
             <p><a href="index.php">→ Acessar Landing Page</a></p>
             <p><a href="test-mysql.php">→ Verificar Instalação</a></p>
         </div>
     <?php elseif ($error): ?>
         <div class="error">
-            <h2>❌ ERRO</h2>
+            <h2>ERRO</h2>
             <p><?php echo htmlspecialchars($error); ?></p>
         </div>
     <?php endif; ?>
@@ -188,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form method="POST" action="">
                 <p>Clique no botão abaixo para instalar o banco de dados:</p>
                 <button type="submit" name="install" value="1">
-                    🚀 INSTALAR BANCO DE DADOS
+                    INSTALAR BANCO DE DADOS
                 </button>
             </form>
         </div>

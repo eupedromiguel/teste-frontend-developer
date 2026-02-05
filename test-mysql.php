@@ -84,11 +84,11 @@
         // Teste 1: Extensão PDO
         if (extension_loaded('pdo_mysql')) {
             echo '<div class="test-item success">';
-            echo '✅ Extensão PDO MySQL está instalada';
+            echo 'Extensão PDO MySQL está instalada';
             echo '</div>';
         } else {
             echo '<div class="test-item error">';
-            echo '❌ Extensão PDO MySQL NÃO está instalada';
+            echo 'Extensão PDO MySQL NÃO está instalada';
             echo '</div>';
             exit;
         }
@@ -99,7 +99,7 @@
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             echo '<div class="test-item success">';
-            echo '✅ Conectado ao MySQL com sucesso!';
+            echo 'Conectado ao MySQL com sucesso!';
             echo '</div>';
 
             // Teste 3: Listar bancos de dados
@@ -107,13 +107,13 @@
             $databases = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
             echo '<div class="test-item success">';
-            echo '✅ Total de bancos de dados: ' . count($databases);
+            echo 'Total de bancos de dados: ' . count($databases);
             echo '</div>';
 
             // Verificar se o banco techflow_landing existe
             if (in_array('techflow_landing', $databases)) {
                 echo '<div class="test-item success">';
-                echo '✅ Banco de dados <code>techflow_landing</code> JÁ EXISTE!';
+                echo 'Banco de dados <code>techflow_landing</code> JÁ EXISTE!';
                 echo '</div>';
 
                 // Conectar ao banco e contar registros
@@ -122,30 +122,30 @@
                 $row = $result->fetch(PDO::FETCH_ASSOC);
 
                 echo '<div class="test-item success">';
-                echo '✅ Total de contatos: ' . $row['total'];
+                echo 'Total de contatos: ' . $row['total'];
                 echo '</div>';
 
                 echo '<div class="test-item info">';
-                echo '<strong>📌 O banco já está instalado!</strong><br>';
+                echo '<strong>O banco já está instalado!</strong><br>';
                 echo 'Você pode acessar a landing page diretamente.';
                 echo '</div>';
             } else {
                 echo '<div class="test-item info">';
-                echo '⚠️ Banco de dados <code>techflow_landing</code> ainda não existe.';
+                echo 'Banco de dados <code>techflow_landing</code> ainda não existe.';
                 echo '</div>';
 
                 echo '<div class="test-item info">';
-                echo '<strong>📌 Próximo passo:</strong><br>';
+                echo '<strong>Próximo passo:</strong><br>';
                 echo 'Use o instalador para criar o banco de dados.';
                 echo '</div>';
             }
 
-            echo '<a href="install.php" class="btn">🚀 Ir para o Instalador</a> ';
-            echo '<a href="index.php" class="btn">📄 Ir para Landing Page</a>';
+            echo '<a href="install.php" class="btn">Ir para o Instalador</a> ';
+            echo '<a href="index.php" class="btn">Ir para Landing Page</a>';
 
         } catch(PDOException $e) {
             echo '<div class="test-item error">';
-            echo '❌ Erro ao conectar com MySQL:<br>';
+            echo 'Erro ao conectar com MySQL:<br>';
             echo '<code>' . htmlspecialchars($e->getMessage()) . '</code>';
             echo '</div>';
 

@@ -1,22 +1,3 @@
-/**
- * TechFlow Solutions - Landing Page
- * Main JavaScript File
- *
- * Features:
- * - Form validation and submission
- * - Scroll animations
- * - FAQ accordion
- * - Phone mask
- * - Smooth scroll
- */
-
-// =============================================
-// Utility Functions
-// =============================================
-
-/**
- * Debounce function to limit event firing
- */
 function debounce(func, wait) {
   let timeout;
   return function executedFunction(...args) {
@@ -29,9 +10,6 @@ function debounce(func, wait) {
   };
 }
 
-/**
- * Check if element is in viewport
- */
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
   return (
@@ -42,9 +20,6 @@ function isInViewport(element) {
   );
 }
 
-/**
- * Check if element is partially in viewport
- */
 function isPartiallyInViewport(element, offset = 100) {
   const rect = element.getBoundingClientRect();
   const windowHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -54,13 +29,6 @@ function isPartiallyInViewport(element, offset = 100) {
   );
 }
 
-// =============================================
-// Phone Mask
-// =============================================
-
-/**
- * Apply phone mask to input
- */
 function phoneMask(value) {
   if (!value) return '';
   value = value.replace(/\D/g, '');
@@ -69,7 +37,6 @@ function phoneMask(value) {
   return value;
 }
 
-// Apply mask to phone input
 const phoneInput = document.getElementById('phone');
 if (phoneInput) {
   phoneInput.addEventListener('input', (e) => {
@@ -77,33 +44,20 @@ if (phoneInput) {
   });
 }
 
-// =============================================
-// Form Validation
-// =============================================
-
 const contactForm = document.getElementById('contactForm');
 const successMessage = document.getElementById('successMessage');
 const errorMessageGlobal = document.getElementById('errorMessageGlobal');
 
-/**
- * Validate email format
- */
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
 
-/**
- * Validate phone format
- */
 function isValidPhone(phone) {
   const phoneRegex = /^\(\d{2}\)\s\d{4,5}-\d{4}$/;
   return phoneRegex.test(phone);
 }
 
-/**
- * Show error message for a field
- */
 function showError(fieldId, errorId) {
   const field = document.getElementById(fieldId);
   const error = document.getElementById(errorId);
@@ -114,9 +68,6 @@ function showError(fieldId, errorId) {
   }
 }
 
-/**
- * Hide error message for a field
- */
 function hideError(fieldId, errorId) {
   const field = document.getElementById(fieldId);
   const error = document.getElementById(errorId);
@@ -127,9 +78,6 @@ function hideError(fieldId, errorId) {
   }
 }
 
-/**
- * Validate form field
- */
 function validateField(fieldId, errorId, validationFn = null) {
   const field = document.getElementById(fieldId);
   if (!field) return false;
@@ -150,28 +98,21 @@ function validateField(fieldId, errorId, validationFn = null) {
   return true;
 }
 
-/**
- * Validate entire form
- */
 function validateForm() {
   let isValid = true;
 
-  // Validate name
   if (!validateField('name', 'nameError')) {
     isValid = false;
   }
 
-  // Validate email
   if (!validateField('email', 'emailError', isValidEmail)) {
     isValid = false;
   }
 
-  // Validate phone
   if (!validateField('phone', 'phoneError', isValidPhone)) {
     isValid = false;
   }
 
-  // Validate message
   if (!validateField('message', 'messageError')) {
     isValid = false;
   }
@@ -179,7 +120,6 @@ function validateForm() {
   return isValid;
 }
 
-// Add real-time validation
 ['name', 'email', 'phone', 'message'].forEach(fieldId => {
   const field = document.getElementById(fieldId);
   if (field) {
@@ -195,7 +135,6 @@ function validateForm() {
       }
     });
 
-    // Remove error on input
     field.addEventListener('input', () => {
       const errorId = `${fieldId}Error`;
       if (field.value.trim()) {
@@ -205,35 +144,26 @@ function validateForm() {
   }
 });
 
-// =============================================
-// Form Submission
-// =============================================
-
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Hide previous messages
     successMessage.classList.remove('visible');
     errorMessageGlobal.classList.remove('visible');
 
-    // Validate form
     if (!validateForm()) {
       return;
     }
 
-    // Get form data
     const formData = new FormData(contactForm);
     const submitBtn = contactForm.querySelector('.submit-btn');
     const btnText = submitBtn.querySelector('.btn-text');
 
-    // Disable button and show loading
     submitBtn.disabled = true;
     const originalText = btnText.textContent;
     btnText.textContent = 'Enviando...';
 
     try {
-      // Submit form
       const response = await fetch(contactForm.action, {
         method: 'POST',
         body: formData
@@ -242,22 +172,17 @@ if (contactForm) {
       const result = await response.json();
 
       if (result.success) {
-        // Show success message
         successMessage.classList.add('visible');
 
-        // Reset form
         contactForm.reset();
 
-        // Hide success message after 5 seconds
         setTimeout(() => {
           successMessage.classList.remove('visible');
         }, 5000);
       } else {
-        // Show error message
         errorMessageGlobal.textContent = result.message || 'Ocorreu um erro ao enviar o formulário. Tente novamente.';
         errorMessageGlobal.classList.add('visible');
 
-        // Hide error message after 5 seconds
         setTimeout(() => {
           errorMessageGlobal.classList.remove('visible');
         }, 5000);
@@ -267,25 +192,16 @@ if (contactForm) {
       errorMessageGlobal.textContent = 'Ocorreu um erro ao enviar o formulário. Tente novamente.';
       errorMessageGlobal.classList.add('visible');
 
-      // Hide error message after 5 seconds
       setTimeout(() => {
         errorMessageGlobal.classList.remove('visible');
       }, 5000);
     } finally {
-      // Re-enable button
       submitBtn.disabled = false;
       btnText.textContent = originalText;
     }
   });
 }
 
-// =============================================
-// Scroll Animations
-// =============================================
-
-/**
- * Animate elements on scroll
- */
 function animateOnScroll() {
   const elements = document.querySelectorAll('.fade-in-up');
 
@@ -296,15 +212,9 @@ function animateOnScroll() {
   });
 }
 
-// Initialize scroll animations
 animateOnScroll();
 
-// Listen to scroll events with debounce
 window.addEventListener('scroll', debounce(animateOnScroll, 50));
-
-// =============================================
-// FAQ Accordion
-// =============================================
 
 const faqQuestions = document.querySelectorAll('.faq-question');
 
@@ -313,7 +223,6 @@ faqQuestions.forEach(question => {
     const isActive = question.classList.contains('active');
     const answer = question.nextElementSibling;
 
-    // Close all other FAQs
     faqQuestions.forEach(q => {
       if (q !== question) {
         q.classList.remove('active');
@@ -322,7 +231,6 @@ faqQuestions.forEach(question => {
       }
     });
 
-    // Toggle current FAQ
     if (isActive) {
       question.classList.remove('active');
       question.setAttribute('aria-expanded', 'false');
@@ -335,18 +243,10 @@ faqQuestions.forEach(question => {
   });
 });
 
-// =============================================
-// Smooth Scroll
-// =============================================
-
-/**
- * Smooth scroll to anchor links
- */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
 
-    // Ignore empty anchors
     if (href === '#' || href === '#!') {
       e.preventDefault();
       window.scrollTo({
@@ -373,13 +273,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// =============================================
-// Header Scroll Effect
-// =============================================
-
-/**
- * Add shadow to header on scroll
- */
 let lastScroll = 0;
 const header = document.querySelector('.header');
 
@@ -395,13 +288,6 @@ window.addEventListener('scroll', debounce(() => {
   lastScroll = currentScroll;
 }, 50));
 
-// =============================================
-// Performance Optimization
-// =============================================
-
-/**
- * Lazy load images when they come into viewport
- */
 function lazyLoadImages() {
   const images = document.querySelectorAll('img[data-src]');
 
@@ -419,32 +305,56 @@ function lazyLoadImages() {
   images.forEach(img => imageObserver.observe(img));
 }
 
-// Initialize lazy loading if images exist
 if (document.querySelectorAll('img[data-src]').length > 0) {
   lazyLoadImages();
 }
 
-// =============================================
-// Initialize on DOM Load
-// =============================================
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('TechFlow Solutions - Landing Page loaded successfully! 🚀');
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+}
 
-  // Trigger initial scroll animation
-  animateOnScroll();
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+}
+
+initTheme();
+
+const themeToggle = document.getElementById('themeToggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', toggleTheme);
+}
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+  if (!localStorage.getItem('theme')) {
+    document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+  }
 });
 
-// =============================================
-// Page Visibility API - Pause animations when tab is not visible
-// =============================================
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('TechFlow Solutions - Landing Page loaded successfully!');
+
+  animateOnScroll();
+
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+});
 
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
-    // Page is hidden - pause animations if needed
     console.log('Page hidden');
   } else {
-    // Page is visible - resume animations
     console.log('Page visible');
     animateOnScroll();
   }

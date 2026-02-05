@@ -1,19 +1,11 @@
-// =============================================
-// Main Stylesheet - TechFlow Solutions
-// Landing Page Project
-// =============================================
-
-// Import Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
 
-// Import Partials
 @import 'variables';
 @import 'mixins';
 @import 'base';
 @import 'header';
 @import 'sections';
 
-// Custom Scrollbar
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -31,7 +23,6 @@
   }
 }
 
-// Selection
 ::selection {
   background: $primary-color;
   color: $white;

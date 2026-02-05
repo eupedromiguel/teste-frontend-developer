@@ -25,10 +25,16 @@
                 <i data-lucide="zap"></i>
                 <span>TechFlow</span>
             </a>
-            <a href="https://api.whatsapp.com/send/?phone=5511912345678&text&type=phone_number&app_absent=0" class="contact-phone">
-                <i data-lucide="phone"></i>
-                <span>(11) 91234-5789</span>
-            </a>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+                <a href="https://api.whatsapp.com/send/?phone=5511912345678&text&type=phone_number&app_absent=0" class="contact-phone">
+                    <i data-lucide="phone"></i>
+                    <span>(11) 91234-5789</span>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -275,7 +281,7 @@
 
     <script src="assets/js/main.js"></script>
 
-    <!-- Initialize Lucide Icons -->
+    <!-- Inicializar Ícones Lucide -->
     <script>
         lucide.createIcons();
     </script>

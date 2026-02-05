@@ -1,23 +1,15 @@
 <?php
-/**
- * Database Configuration
- * TechFlow Solutions - Landing Page
- *
- * This file contains database connection settings.
- * Update these values according to your environment.
- */
 
-// Database configuration constants
-define('DB_HOST', 'localhost');        // Database host
-define('DB_NAME', 'techflow_landing'); // Database name
-define('DB_USER', 'root');             // Database username
-define('DB_PASS', '');                 // Database password
-define('DB_CHARSET', 'utf8mb4');       // Database charset
+define('DB_HOST', 'localhost');        
+define('DB_NAME', 'techflow_landing'); 
+define('DB_USER', 'root');             
+define('DB_PASS', '');                 
+define('DB_CHARSET', 'utf8mb4');       
 
 /**
- * Create database connection
+ * Criar conexão com banco de dados
  *
- * @return PDO|null Database connection or null on failure
+ * @return PDO|null Conexão com banco de dados ou null em caso de falha
  */
 function getDatabaseConnection() {
     try {
@@ -33,15 +25,15 @@ function getDatabaseConnection() {
 
         return $pdo;
     } catch (PDOException $e) {
-        error_log("Database connection failed: " . $e->getMessage());
+        error_log("Falha na conexão com banco de dados: " . $e->getMessage());
         return null;
     }
 }
 
 /**
- * Test database connection
+ * Testar conexão com banco de dados
  *
- * @return bool True if connection successful, false otherwise
+ * @return bool True se conexão bem-sucedida, false caso contrário
  */
 function testDatabaseConnection() {
     $pdo = getDatabaseConnection();

@@ -146,10 +146,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['install'])) {
         <?php endif; ?>
 
         <?php if ($success): ?>
-            <p><strong>✅ Instalação concluída!</strong></p>
+            <p><strong>Instalação concluída!</strong></p>
             <p>O banco de dados foi criado com sucesso.</p>
-            <a href="index.php"><button>🚀 Acessar Landing Page</button></a>
-            <a href="test-mysql.php"><button class="btn-secondary">🔍 Verificar Instalação</button></a>
+            <a href="index.php"><button>Acessar Landing Page</button></a>
+            <a href="test-mysql.php"><button class="btn-secondary"> Verificar Instalação</button></a>
         <?php else: ?>
             <p>Esta é uma versão simplificada do instalador para diagnóstico.</p>
 
@@ -160,7 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['install'])) {
                 </label>
 
                 <button type="submit" name="install">
-                    🚀 Instalar Agora
+                    Instalar Agora
                 </button>
             </form>
         <?php endif; ?>
